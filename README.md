@@ -1,1 +1,1 @@
-# Verificador-de-senha
+# Verificador de senha
