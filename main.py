@@ -1,4 +1,4 @@
-def pedir_senha(senha, **options):
+def verificar_senha(senha, **options):
     maiusculas = options.get('maiusculas')
     numeros = options.get('numeros')
     minusculas = options.get('minusculas')
@@ -58,4 +58,11 @@ def pedir_senha(senha, **options):
         'mensagemError': mensagem
     }
 
-print(pedir_senha('@albert123n', confirmacao='@albert123n', quantidade=8, numeros=True, maiusculas=True, minusculas=True, simbolos=True))
+
+resultado = verificar_senha('SenhaSegura123!@#', confirmacao='SenhaSegura123!@#', quantidade=10, numeros=True, maiusculas=True, minusculas=True, simbolos=True)
+if resultado['resposta']:
+    print('Senha segura! 👍')
+else:
+    print('A senha não atende aos requisitos:')
+    for mensagem in resultado['mensagemError']:
+        print('- ' + mensagem)
